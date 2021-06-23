@@ -16,7 +16,7 @@ import { useState } from 'react';
 export function Home() {
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth()
-    const [roomCode, setRoomCode] = useState(' ');
+    const [roomCode, setRoomCode] = useState('');
 
     async function handleCreateRoom() {
         if (!user) {
@@ -29,7 +29,7 @@ export function Home() {
     async function handleJoinRoom(event: FormEvent) {
         event.preventDefault();
 
-        if (roomCode.trim() === ' ') {
+        if (roomCode.trim() === '') {
             return;
         }
 
